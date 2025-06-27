@@ -22,13 +22,10 @@ namespace Core.Logging
 
         public static void Exception(Exception ex, string? ctx = null) =>
             _logger.ZLogError(ex, $"{ctx ?? ex.Message}");
-        
+
         // ✅ StringBuilder 기반 체이닝 로그 빌더
         public static GameLogBuilder Builder() => new(new StringBuilder());
-    }
-
-    public static class GameLogExtension
-    {
+        
         /// <summary>
         /// 조건이 false일 경우 로그 출력 + 에디터 Assert
         /// </summary>
